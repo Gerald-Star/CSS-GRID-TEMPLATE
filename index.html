@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS GRID</title>
+  </head>
+  <body>
+    <h1 class="text-header">CSS GRID TEMPLATES</h1>
+
+    <h2>Defining a Grid</h2>
+
+    <p>
+      To define a Grid use display:grid or display:inline-grid on the parent
+      element. You can then create a grid using the grid-template-columns and
+      grid-template-rows properties. I am using the grid-gap property to create
+      a gap between my columns and rows of 10px.
+    </p>
+
+    <p>
+      This property is a shorthand for grid-column-gap and grid-row-gap so you
+      can set these values individually. All direct children of the parent now
+      become grid items and the auto-placement algorithm lays them out, one in
+      each grid cell. Creating extra rows as needed
+    </p>
+
+    <div class="wrapper1">
+      <div class="box1">A</div>
+      <div class="box1">B</div>
+      <div class="box1">C</div>
+      <div class="box1">D</div>
+      <div class="box1">E</div>
+      <div class="box1">F</div>
+    </div>
+
+    <h2>Line-based placement spanning tracks</h2>
+    <p>
+      To create Grid Areas that are larger than a single grid track we specify
+      an end line that is more than one track away.
+    </p>
+    <p>
+      Here I am using the grid-column and grid-row shorthand and have omitted
+      the end value for any items that span one row or column track.
+    </p>
+
+    <p>
+      The grid-template-areas property can be used to define named grid areas
+      that can be referenced by grid-area. This is a great way to create a
+      layout that is easy to understand and maintain.
+    </p>
+
+    <p>
+      You can also use the Line-based placement spanning tracks with the
+      <strong>span keyword</strong> to create the same grid area like this
+    </p>
+
+    <div class="wrapper2">
+      <div class="box2 a">A</div>
+      <div class="box2 b">B</div>
+      <div class="box2 c">C</div>
+      <div class="box2 d">D</div>
+    </div>
+
+    <h2>Line-based placement named lines with spans</h2>
+    <p>
+      You can give lines the same name and then use the span keyword to target
+      lines of a certain name. This is really useful if you want to create a
+      complex grid with multiple content tracks and gutters.
+    </p>
+
+    <div class="wrapper3">
+      <div class="box3 a3">A</div>
+      <div class="box3 b3">B</div>
+      <div class="box3 c3">C</div>
+      <div class="box3 d3">D</div>
+      <div class="box3 e3">E</div>
+    </div>
+
+    <h2>Using repeat notation</h2>
+    <p>
+      In example 8 we repeated the same definitions to create our grid with
+      named lines. We could save some typing by using repeat notation. The
+      values for repeat are the number of times you want the expression to
+      repeat and then the expression.
+    </p>
+
+    <div class="wrapper4">
+      <div class="box4 a4">A</div>
+      <div class="box4 b4">B</div>
+      <div class="box4 c4">C</div>
+      <div class="box4 d4">D</div>
+      <div class="box4 e4">E</div>
+    </div>
+
+    <!-- Redefining Grid Areas with Media Queries -->
+
+    <h2>Redefining Grid Areas with Media Queries</h2>
+    <p>
+      can easily redefine the grid and the position of the elements on it using
+      Media Queries. I define the Grid Areas as before outside of the Media
+      Queries and then redefine the Grid Tracks and the position of the elements
+      onto that grid inside my Media Queries.
+    </p>
+    <div class="wrapper5">
+      <div class="box5 header5">Header</div>
+      <div class="box5 sidebar5">Sidebar</div>
+      <div class="box5 sidebar2">Sidebar 2</div>
+      <div class="box5 content5">
+        Content <br />
+        More content than we had before so this column is now quite tall.
+      </div>
+      <div class="box5 footer5">Footer</div>
+    </div>
+
+    <!-- grid advert -->
+
+    <h2>Grid Advert</h2>
+
+    <p>
+      I have some content and then some ads which I have placed right at the
+      bottom of the source. I can use Grid to visually display these in between
+      sections of content. I could then use Media Queries to display them
+      elsewhere in a wider layout.
+    </p>
+
+    <p>
+      Important! For accessibility purposes the logical order should be set in
+      the source. Do not use Grid properties to adjust the logical order of your
+      document. Read the specification | View example as full page
+    </p>
+
+    <div class="wrapper6">
+      <div class="section1">
+        <p>
+          In our urban and suburban houses what should we do without cats? In
+          our sitting or bedrooms, our libraries, in our kitchens and
+          storerooms, our farms, barns, and rickyards, in our docks, our
+          granaries, our ships, and our wharves, in our corn markets, meat
+          markets, and other places too numerous to mention, how useful they
+          are! In our ships, however, the rats oft set them at defiance; still
+          they are of great service.
+        </p>
+      </div>
+      <div class="section2">
+        <p>
+          How wonderfully patient is the cat when watching for rats or mice,
+          awaiting their egress from their place of refuge or that which is
+          their home! How well Shakespeare in Pericles, Act iii., describes this
+          keen attention of the cat to its natural pursuit!
+        </p>
+      </div>
+      <div class="section3">
+        <p>
+          A slight rustle, and the fugitive comes forth; a quick, sharp,
+          resolute motion, and the cat has proved its usefulness. Let any one
+          have a plague of rats and mice, as I once had, and let them be
+          delivered therefrom by cats, as I was, and they will have a lasting
+          and kind regard for them.
+        </p>
+      </div>
+      <div class="box6 ad1">Advert!</div>
+      <div class="box6 ad2">Another lovely advert!</div>
+    </div>
+
+    <!-- grid auto flow column -->
+
+    <div class="wrapper7">
+      <div class="box7">1</div>
+      <div class="box7">2</div>
+      <div class="box7">3</div>
+      <div class="box7">4</div>
+      <div class="box7">5</div>
+      <div class="box7">6</div>
+      <div class="box7">7</div>
+      <div class="box7">8</div>
+      <div class="box7">9</div>
+      <div class="box7">10</div>
+      <div class="box7">11</div>
+      <div class="box7">12</div>
+    </div>
+
+    <!-- nested grid -->
+
+    <h2>Nested Grids</h2>
+
+    <p>
+      Nested Grid is a good simple example of nesting one grid inside another.
+      Any Grid Area can become a grid itself, by setting display:grid and then
+      defining the rows and columns.
+    </p>
+
+    <div class="wrapper8">
+      <div class="box8 a8">A</div>
+      <div class="box8 b8">B</div>
+      <div class="box8 c8">C</div>
+      <div class="box8 d8">
+        <div class="box8 e8">E</div>
+        <div class="box8 f8">F</div>
+        <div class="box8 g8">G</div>
+      </div>
+    </div>
+
+    <!-- align items box align -->
+
+    <div class="wrapper9">
+      <div class="box9 a9">
+        <p>This is box A.</p>
+      </div>
+      <div class="box9 b9">
+        <p>This is box B.</p>
+      </div>
+      <div class="box9 c9">
+        <p>This is box C.</p>
+      </div>
+      <div class="box9 d9">
+        <p>This is box D.</p>
+      </div>
+      <div class="box9 e9">
+        <p>
+          Each of the boxes on the left has a grid area of 3 columns and 3 rows
+          (we're counting the gutter col/row).
+        </p>
+        <p>
+          The align-items property is used to align the content inside each
+          grid-area.
+        </p>
+        <p>Other values of align-items are:</p>
+        <ul>
+          <li>stretch</li>
+          <li>start</li>
+          <li>end</li>
+          <li>center</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Responsive Semantic Grid -->
+
+    <h2>Responsive Semantic Grid</h2>
+
+    <div class="wrapper10">
+      <header class="header10">My header</header>
+      <aside class="sidebar10">Sidebar</aside>
+      <article class="content10">
+        <h1>2 column, header and footer</h1>
+        <p>
+          This example uses line-based positioning, to position the header and
+          footer, stretching them across the grid.
+        </p>
+      </article>
+      <footer class="footer10">My footer</footer>
+    </div>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
